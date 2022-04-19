@@ -1,31 +1,44 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
-using std::cout; using std::endl;
-using std::vector; using std::string;
-
-class CustomString {
-public:
-    explicit CustomString(const string &s = string()):
-            str(new string(s)) { }
-
-    CustomString(const CustomString &p):
-            str(new string(*p.str)) { }
-
-    ~CustomString() { delete str; }
-
-    string & getString() { return *str; };
-private:
-    string *str;
+#include <bits/stdc++.h>
+using namespace std;
+ 
+// base class
+class Parent
+{  
+    // protected data members
+    protected:
+    int id_protected;
+    
 };
-
-int main()
+ 
+// sub class or derived class from public base class
+class Child : public Parent
 {
-    CustomString str1("Not everyone in this world has got a halo");
-    CustomString str2(str1);
-
-    cout << "str1: " << str1.getString() << endl;
-    cout << "str2: " << str2.getString() << endl << endl;
-
+    public:
+    void setId(int id)
+    {
+         
+        // Child class is able to access the inherited
+        // protected data members of base class
+         
+        id_protected = id;
+         
+    }
+     
+    void displayId()
+    {
+        cout << "id_protected is: " << id_protected << endl;
+    }
+};
+ 
+// main function
+int main() {
+     
+    Child obj1;
+     
+    // member function of the derived class can
+    // access the protected data members of the base class
+     
+    obj1.setId(81);
+    obj1.displayId();
+    return 0;
 }

@@ -1,34 +1,24 @@
 #include<iostream>
 using namespace std;
  
-class Circle
-{  
-   
-    private:
-        double radius;
-      
-    
-    public:   
-        void compute_area(double r)
-        {   
-            radius = r;
-             
-            double area = 3.14*radius*radius;
-             
-            cout << "Radius is: " << radius << endl;
-            cout << "Area is: " << area;
-        }
-     
+
+class Vehicle {
+  public:
+    Vehicle()
+    {
+      cout << "This is a Vehicle\n";
+    }
+};
+ 
+
+class Car : public Vehicle {
+ 
 };
  
 
 int main()
 {  
-   
-    Circle obj;
-
-    obj.compute_area(4.0);
-     
-     
+    
+    Car obj;
     return 0;
 }

@@ -1,32 +1,34 @@
-#include <iostream>
- 
-class B;
- 
-class A {
-public:
-    void showB(B&);
-};
- 
-class B {
-private:
-    int b;
- 
-public:
-    B() { b = 0; }
-    friend void A::showB(B& x); // Friend function
-};
- 
-void A::showB(B& x)
+#include<iostream>
+using namespace std;
+  
+// An abstract class with constructor
+class Base
 {
-    // Since showB() is friend of B, it can
-    // access private members of B
-    std::cout << "B::b = " << x.b;
-}
- 
-int main()
+protected:
+int x;
+public:
+virtual void fun() = 0;
+Base(int i) {
+              x = i; 
+            cout<<"Constructor of base called\n";
+            }
+};
+  
+class Derived: public Base
 {
-    A a;
-    B x;
-    a.showB(x);
+    int y;
+public:
+    Derived(int i, int j):Base(i) { y = j; }
+    void fun() { cout << "x = " << x << ", y = " << y<<'\n'; }
+};
+  
+int main(void)
+{ 
+    Derived d(4, 5); 
+    d.fun();
+    
+  //object creation using pointer of base class
+    Base *ptr=new Derived(6,7);
+      ptr->fun();
     return 0;
 }

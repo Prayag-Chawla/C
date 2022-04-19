@@ -1,12 +1,37 @@
-#include<iostream> 
+#include<iostream>
 using namespace std;
-   
-int x;  
-   
+ 
+class Circle
+{  
+    // private data member
+    private:
+        double radius;
+      
+    // public member function   
+    public:   
+        void compute_area(double r)
+        {   // member function can access private
+            // data member radius
+            radius = r;
+             
+            double area = 3.14*radius*radius;
+             
+            cout << "Radius is: " << radius << endl;
+            cout << "Area is: " << area;
+        }
+     
+};
+ 
+// main function
 int main()
-{
-  int x = 10; 
-  cout << "Value of global x is " << ::x;
-  cout << "\nValue of local x is " << x;  
-  return 0;
+{  
+    // creating object of the class
+    Circle obj;
+     
+    // trying to access private data member
+    // directly outside the class
+    obj.compute_area(1.5);
+     
+     
+    return 0;
 }

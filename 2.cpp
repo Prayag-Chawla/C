@@ -1,41 +1,36 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
- 
-class Example {
-public:
-    int a;
- 
-    
-    void add(Example E)
-    {
-        a = a + E.a;
-    }
-};
- 
 
-int main()
-{
- 
-   
-    Example E1, E2;
- 
-    
-    E1.a = 50;
-    E2.a = 100;
- 
-    cout << "Initial Values \n";
-    cout << "Value of object 1: " << E1.a
-         << "\n& object 2: " << E2.a
-         << "\n\n";
- 
-    
-    E2.add(E1);
- 
-    
-    cout << "New values \n";
-    cout << "Value of object 1: " << E1.a
-         << "\n& object 2: " << E2.a
-         << "\n\n";
- 
+// declare parent class
+class Sample {
+    // protected elements
+   protected:
+    int age;
+};
+
+// declare child class
+class SampleChild : public Sample {
+
+   public:
+    void displayAge(int a) {
+        age = a;
+        cout << "Age = " << age << endl;
+    }
+
+};
+
+int main() {
+    int ageInput;
+
+    // declare object of child class
+    SampleChild child;
+
+    cout << "Enter your age: ";
+    cin >> ageInput;
+
+    // call child class function
+    // pass ageInput as argument
+    child.displayAge(ageInput);
+
     return 0;
 }
