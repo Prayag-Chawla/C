@@ -1,36 +1,49 @@
 #include <iostream>
 using namespace std;
-
-// declare parent class
-class Sample {
-    // protected elements
-   protected:
-    int age;
-};
-
-// declare child class
-class SampleChild : public Sample {
-
-   public:
-    void displayAge(int a) {
-        age = a;
-        cout << "Age = " << age << endl;
+  
+class Base {
+    int i;
+  
+public:
+    Base() {}
+    void setBaseProperties(int i)
+    {
+        this->i = i;
     }
-
+    void showBaseProperties()
+    {
+        std::cout << endl
+                  << "i = " << i;
+    }
+    virtual ~Base() {}
 };
-
-int main() {
-    int ageInput;
-
-    // declare object of child class
-    SampleChild child;
-
-    cout << "Enter your age: ";
-    cin >> ageInput;
-
-    // call child class function
-    // pass ageInput as argument
-    child.displayAge(ageInput);
-
+  
+class Child : public Base {
+    int j;
+    int k;
+  
+public:
+    void setChildProperties(int i, int j, int k)
+    {
+        setBaseProperties(i);
+        this->j = j;
+        this->k = k;
+    }
+    void showChildProperties()
+    {
+        showBaseProperties();
+        cout << " j = " << j << " k = " << k;
+    }
+};
+  
+int main()
+{
+    Child c;
+    c.setChildProperties(1, 2, 3);
+  
+    // this exposed function is undesirable
+    c.setBaseProperties(4); 
+  
+    c.showChildProperties();
     return 0;
 }

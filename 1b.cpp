@@ -1,28 +1,43 @@
-#include <iostream>
-
+#include<iostream>
 using namespace std;
-
-class Rectangle
-{
-	public:
-		int length;
-		int breadth;
-		Rectangle( int l, int b )
-		{
-			length = l;
-			breadth = b;
-		}
-		int printArea()
-		{
-			return length * breadth;
-		}
+ 
+class base {
+public:
+    virtual void print()
+    {
+        cout << "print base class\n";
+    }
+ 
+    void show()
+    {
+        cout << "show base class\n";
+    }
 };
-
+ 
+class derived : public base {
+public:
+    void print()
+    {
+        cout << "print derived class\n";
+    }
+ 
+    void show()
+    {
+        cout << "show derived class\n";
+    }
+};
+ 
 int main()
 {
-	Rectangle rt1( 7, 4 );
-	Rectangle rt2( 4, 5 );
-	cout << "Area of first rectangle " << rt1.printArea() << endl;
-	cout << "Area of second rectangle " << rt2.printArea() << endl;
-	return 0;
+    base *bptr;
+    derived d;
+    bptr = &d;
+ 
+    // Virtual function, binded at runtime
+    bptr->print();
+ 
+    // Non-virtual function, binded at compile time
+    bptr->show();
+   
+    return 0;
 }

@@ -1,68 +1,41 @@
-#include <iostream>
+#include <bits/stdc++.h>
+  
 using namespace std;
- 
-//Class declaration.
-class Demo
+class Geeks
 {
-    //Private block  to declare data member( X,Y ) of integer type.
-    private:
-        int X;
-        int Y;
- 
-    //Public block of member function to access data members.
     public:
-        //Declaration of default or no argument constructor to initialize data members.
-            Demo (); 
-        //To take input from user.
-        void    Input(); 
-        //To display output onn screen.
-        void    Display();
-     
-};//End of class
- 
-//Definition of constructor.
-Demo:: Demo()
-{
-    X = 0;
-    Y = 0;
-}
- 
-//Definition of Input() member function.
-void Demo:: Input()
-{
-    cout << "Enter Value of X: "; cin >> X;
-    cout << "Enter Value of Y: "; cin >> Y;
-}
- 
- 
-//Definition of Display() member function.
-void Demo:: Display()
-{
-    cout << endl << "X: " << X;
-    cout << endl << "Y: " << Y << endl;
-}
- 
-int main()
-{
-    Demo d ; //Ctor autometically call when object is created.
- 
-    //Display value of data member.
-    cout << endl <<"Method 1: " << endl;  
-    cout << "Value after initialization : " ;
-    d.Display();    
- 
-    d.Input();
-    cout << "Value after User Input : ";
-    d.Display();
- 
- 
-    //We can also create object like this
-    Demo d1 = Demo();
-     
-    //Display value of data member.
-    cout << endl << "Method 2: " << endl;
-    cout << "Value after initialization : ";
-    d1.Display();   
-     
+      
+    // function with 1 int parameter
+    void func(int x)
+    {
+        cout << "value of x is " << x << endl;
+    }
+      
+    // function with same name but 1 double parameter
+    void func(double x)
+    {
+        cout << "value of x is " << x << endl;
+    }
+      
+    // function with same name and 2 int parameters
+    void func(int x, int y)
+    {
+        cout << "value of x and y is " << x << ", " << y << endl;
+    }
+};
+  
+int main() {
+      
+    Geeks obj1;
+      
+    // Which function is called will depend on the parameters passed
+    // The first 'func' is called 
+    obj1.func(7);
+      
+    // The second 'func' is called
+    obj1.func(9.132);
+      
+    // The third 'func' is called
+    obj1.func(85,64);
     return 0;
-}
+} 
