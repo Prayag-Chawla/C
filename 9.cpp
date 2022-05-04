@@ -1,47 +1,29 @@
-#include <iostream>
-using namespace std;
- 
-// first base class
-class Parent1
-{  
-    
+class test {
+    double d;
+    int m;
+
     public:
-     
-    // first base class's Constructor   
-    Parent1()
-    {
-        cout << "Inside first base class" << endl;
+    test() {
+        d=0;
+        m=0;
+    }
+
+    test(double n) {
+        d=n;
+    }
+
+    const test operator+(const test& t) {
+        test temp;
+        temp.d = d+ t.d;
+        return temp;
     }
 };
- 
-// second base class
-class Parent2
-{
-    public:
-     
-    // second base class's Constructor
-    Parent2()
-    {
-        cout << "Inside second base class" << endl;
-    }
-};
- 
-// child class inherits Parent1 and Parent2
-class Child : public Parent1, public Parent2
-{
-    public:
-     
-    // child class's Constructor
-    Child()
-    {
-        cout << "Inside child class" << endl;
-    }
-};
- 
-// main function
+
 int main() {
-     
-    // creating object of class Child
-    Child obj1;
+    test t1(1.2);
+    test t2(2.5);
+    test t3, t4;
+    t3= t1+ t2;
+    t4 = t3 + 1.0;
     return 0;
 }

@@ -1,34 +1,47 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-  
-// An abstract class with constructor
-class Base
-{
-protected:
-int x;
+ 
+// Time Class
+class Time {
+    int hour;
+    int mins;
+ 
 public:
-virtual void fun() = 0;
-Base(int i) {
-              x = i; 
-            cout<<"Constructor of base called\n";
-            }
+    // Default Constructor
+    Time()
+    {
+        hour = 0;
+        mins = 0;
+    }
+ 
+    // Parameterized Constructor
+    Time(int t)
+    {
+        hour = t / 60;
+        mins = t % 60;
+    }
+ 
+    // Function to print the value
+    // of class variables
+    void Display()
+    {
+        cout << "Time = " << hour
+             << " hrs and "
+             << mins << " mins\n";
+    }
 };
-  
-class Derived: public Base
+ 
+// Driver Code
+int main()
 {
-    int y;
-public:
-    Derived(int i, int j):Base(i) { y = j; }
-    void fun() { cout << "x = " << x << ", y = " << y<<'\n'; }
-};
-  
-int main(void)
-{ 
-    Derived d(4, 5); 
-    d.fun();
-    
-  //object creation using pointer of base class
-    Base *ptr=new Derived(6,7);
-      ptr->fun();
+    // Object of Time class
+    Time T1;
+    int dur = 95;
+ 
+    // Conversion of int type to
+    // class type
+    T1 = dur;
+    T1.Display();
+ 
     return 0;
 }

@@ -1,15 +1,34 @@
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-    int *ptr;  // integer pointer declaration  
-    int marks[10]; // marks array declaration  
-    std::cout << "Enter the elements of an array :" << std::endl;  
-    for(int i=0;i<10;i++)  
-    {  
-        cin>>marks[i];  
-    }  
-    ptr=marks; // both marks and ptr pointing to the same element..  
-    std::cout << "The value of *ptr is :" <<*ptr<< std::endl;  
-    std::cout << "The value of *marks is :" <<*marks<<std::endl;  
-}  
+#include<iostream.h>
+#include<conio.h>
+class Time
+{
+    int hr, min, sec;
+    public:
+    // default constructor
+    Time()
+    {
+        hr=0, min=0; sec=0;
+    }
+    
+    // overloaded constructor
+    Time(int h, int m, int s)
+    {
+        hr=h, min=m; sec=s;
+    }
+    
+    // overloading '<<' operator
+    friend ostream& operator << (ostream &out, Time &tm); 
+};
+
+// define the overloaded function
+ostream& operator << (ostream &out, Time &tm)
+{
+    out << "Time is: " << tm.hr << " hour : " << tm.min << " min : " << tm.sec << " sec";
+    return out;
+}
+
+void main()
+{
+    Time tm(3,15,45);
+    cout << tm;
+}
