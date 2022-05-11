@@ -1,53 +1,31 @@
 #include <iostream>
 using namespace std;
 
-class Complex
-{
-    private:
-      float real;
-      float imag;
-    public:
-       Complex(): real(0), imag(0){ }
-       void input()
-       {
-           cout << "Enter real and imaginary parts respectively: ";
-           cin >> real;
-           cin >> imag;
-       }
+// Class template
+template <class T>
+class Number {
+   private:
+    // Variable of type T
+    T num;
 
-       // Operator overloading
-       Complex operator - (Complex c2)
-       {
-           Complex temp;
-           temp.real = real - c2.real;
-           temp.imag = imag - c2.imag;
+   public:
+    Number(T n) : num(n) {}   // constructor
 
-           return temp;
-       }
-
-       void output()
-       {
-           if(imag < 0)
-               cout << "Output Complex number: "<< real << imag << "i";
-           else
-               cout << "Output Complex number: " << real << "+" << imag << "i";
-       }
+    T getNum() {
+        return num;
+    }
 };
 
-int main()
-{
-    Complex c1, c2, result;
+int main() {
 
-    cout<<"Enter first complex number:\n";
-    c1.input();
+    // create object with int type
+    Number<int> numberInt(7);
 
-    cout<<"Enter second complex number:\n";
-    c2.input();
+    // create object with double type
+    Number<double> numberDouble(7.7);
 
-    // In case of operator overloading of binary operators in C++ programming, 
-    // the object on right hand side of operator is always assumed as argument by compiler.
-    result = c1 - c2;
-    result.output();
+    cout << "int Number = " << numberInt.getNum() << endl;
+    cout << "double Number = " << numberDouble.getNum() << endl;
 
     return 0;
 }

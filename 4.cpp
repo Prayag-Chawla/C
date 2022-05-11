@@ -1,53 +1,27 @@
 #include <iostream>
+#include<conio.h>
+
 using namespace std;
 
-class My_Class {//    ww    w.   d e  m  o  2   s .   c   o  m
-   int num;
-public:
-   void set_num(int val) {num = val;}
-   void show_num();
-};
+int main() {
+   int var = 0;
 
-void My_Class::show_num()
-{
-   cout << num << "\n";
-}
-
-int main()
-{
-  My_Class ob, *p; // declare an object and pointer to it
-
-  ob.set_num(1); // access ob directly
-  ob.show_num();
-
-  p = &ob; // assign p the address of ob
-  p->show_num(); // access ob using pointer
-
-  return 0;
-}#include <iostream>
-using namespace std;
-
-class My_Class {//    ww    w.   d e  m  o  2   s .   c   o  m
-   int num;
-public:
-   void set_num(int val) {num = val;}
-   void show_num();
-};
-
-void My_Class::show_num()
-{
-   cout << num << "\n";
-}
-
-int main()
-{
-  My_Class ob, *p; // declare an object and pointer to it
-
-  ob.set_num(1); // access ob directly
-  ob.show_num();
-
-  p = &ob; // assign p the address of ob
-  p->show_num(); // access ob using pointer
-
-  return 0;
+   cout << "Simple C++ Program for Catch All or Default Exception Handling\n";
+   // try block - for exception code
+   try {
+      // Inside try block
+      if (var == 0) {
+         throw var;
+         // Skip all code after throw
+      }
+   }   // catch block
+   catch (float ex) {
+      // Code executed when exception Catch with float type
+      cout << "Float Exception catch : Value :" << ex;
+   } catch (...) {
+      // Code executed when exception Catch : for default
+      cout << "Default Exception Catch";
+   }
+   getch();
+   return 0;
 }

@@ -1,34 +1,24 @@
-#include<iostream.h>
-#include<conio.h>
-class Time
-{
-    int hr, min, sec;
-    public:
-    // default constructor
-    Time()
-    {
-        hr=0, min=0; sec=0;
+#include <iostream>
+using namespace std;
+void divide(int x,int y) throw(int,double){
+    try{
+        if (x==25 && y==0) throw x;
+        if (x==34 && y==0) throw 90.7;
+        if (x==98 && y==0) throw "error encountered";
     }
-    
-    // overloaded constructor
-    Time(int h, int m, int s)
-    {
-        hr=h, min=m; sec=s;
+    catch(int x){
+        cout << x << endl;
     }
-    
-    // overloading '<<' operator
-    friend ostream& operator << (ostream &out, Time &tm); 
-};
-
-// define the overloaded function
-ostream& operator << (ostream &out, Time &tm)
-{
-    out << "Time is: " << tm.hr << " hour : " << tm.min << " min : " << tm.sec << " sec";
-    return out;
+    catch (float y){
+        cout << y<<endl;
+    }
+    catch (const char *d){
+        cout << d << endl;
+    }
 }
-
-void main()
-{
-    Time tm(3,15,45);
-    cout << tm;
+int main(){
+    divide (25,0);
+    divide (34,0);
+    divide(98,0);
+    return 0;
 }
