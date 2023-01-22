@@ -1,17 +1,17 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-int n;
-cin  >> n;
-int currrow = 1;
-while(currrow <= n){
-    int currcol = 1;
-    char ch ='A' + n - currrow;
-    while(currcol <= currrow){
-        cout << char(ch + currcol - 1);
-        currcol++;
+int main() {
+  int n;
+  cin >> n;
+  int i = 1;
+  while (i <= n) {
+    int j = 1;
+    char ch = 'A' + n - i;
+    while (j <= i) {
+      cout << char(ch + j - 1);
+      j++;
     }
     cout << endl;
-    currrow++;
-    }
+    i++;
+  }
 }

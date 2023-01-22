@@ -1,22 +1,22 @@
-#include <iostream>
+
+#include<iostream>
 using namespace std;
 
-int main() 
-{
-    int exponent;
-    float base, result = 1;
+int main() {
 
-    cout << "Enter base and exponent respectively:  ";
-    cin >> base >> exponent;
-
-    cout << base << "^" << exponent << " = ";
-
-    while (exponent != 0) {
-        result *= base;
-        --exponent;
+	int x,n;
+    cin>>x>>n;
+    int i=1;
+    int ans=x;
+     if(n==0){
+            ans=1;
+            cout<<ans;
     }
-
-    cout << result;
-    
-    return 0;
+    else{
+        while(i<n){
+            ans=ans*x;
+            i=i+1;
+        }
+    cout<<ans;
+    }
 }
