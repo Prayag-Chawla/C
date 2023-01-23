@@ -1,31 +1,22 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
+class Rectangle {
+  public:
+    int length, breadth;
+    int area()
+    {
+      return length * breadth;
+    }
 
-// Class template
-template <class T>
-class Number {
-   private:
-    // Variable of type T
-    T num;
-
-   public:
-    Number(T n) : num(n) {}   // constructor
-
-    T getNum() {
-        return num;
+    int perimeter() {
+      return 2 * (length + breadth);
     }
 };
 
 int main() {
-
-    // create object with int type
-    Number<int> numberInt(7);
-
-    // create object with double type
-    Number<double> numberDouble(7.7);
-
-    cout << "int Number = " << numberInt.getNum() << endl;
-    cout << "double Number = " << numberDouble.getNum() << endl;
-
-    return 0;
+  Rectangle r1;
+  r1.length = 3;
+  r1.breadth = 5;
+  cout << "Area of rectangle is: " << r1.area() << endl;
+  cout << "Perimeter of rectangle is: " << r1.perimeter()<<endl;
 }

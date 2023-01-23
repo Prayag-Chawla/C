@@ -1,19 +1,13 @@
 #include <iostream>
-  
 using namespace std;
-  
 int main()
 {
-  
-    // Initializing the integers
-    int a = 10;
-    int b = 0;
-  
-    // Using showpos()
-    cout << "showpos flag: "
-         << showpos
-         << a << endl
-         << b << endl;
-  
+    int n1 = 0;
+    int n2 = 10;
+    int sum = 0;
+    for (int i = n1; i <= n2; i++)
+        sum = sum + i;
+    cout << sum;
     return 0;
 }
+

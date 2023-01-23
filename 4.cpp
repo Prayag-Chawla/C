@@ -1,27 +1,27 @@
 #include <iostream>
-#include<conio.h>
-
 using namespace std;
-
-int main() {
-   int var = 0;
-
-   cout << "Simple C++ Program for Catch All or Default Exception Handling\n";
-   // try block - for exception code
-   try {
-      // Inside try block
-      if (var == 0) {
-         throw var;
-         // Skip all code after throw
-      }
-   }   // catch block
-   catch (float ex) {
-      // Code executed when exception Catch with float type
-      cout << "Float Exception catch : Value :" << ex;
-   } catch (...) {
-      // Code executed when exception Catch : for default
-      cout << "Default Exception Catch";
-   }
-   getch();
-   return 0;
+int main() 
+{
+    int n, x;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    int a[n];
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    cout << "Enter the element to be searched: ";
+    cin >> x;
+    for (int i = 0; i < n; i++) {
+        if (a[i] == x) {
+            cout << "Element found at index " << i << endl;
+            return 0;
+        }
+    }
+    cout << "Element not found in the array." << endl;
+    return 0;
 }
+
+
+
+
