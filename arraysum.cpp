@@ -1,15 +1,21 @@
 #include<iostream>
 using namespace std;
+
 int main(){
-    int size;
-    cin >> size;
-    int arr[1000000];
-    for(int i = 0; i < size; i++){
+    int n;
+    cin >> n;
+    
+    int arr[100000];
+    
+    for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
-    int result = 0;
-    for(int i = 0; i < size; i++){
-        result += arr[i];
+	
+    int sum = 0;
+    
+    for(int i = 0; i < n; i++){
+        sum = sum + arr[i];
     }
-    cout << result << endl;
+    
+    cout << sum;
 }
