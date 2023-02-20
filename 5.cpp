@@ -1,22 +1,23 @@
 #include<iostream>
 using namespace std;
-class Rectangle {
-  public:
-    int length, breadth;
-    int area()
+int fibo(int n)
+{
+    if(n==1||n==0)
     {
-      return length * breadth;
+        return 1;
     }
+    return n*fibo(n-1);
+}
+int main(){
+    int x;
+    cout<<"Enter the number upto which you want the series:"<<endl;
+    cin>>x;
+    cout<<"The fibonacci series is: "<<endl;
+   for (int i = 0; i <=x; i++)
+   {
+    cout<<fibo(i)<<" ";
+   }
+   
+    return 0;
 
-    int perimeter() {
-      return 2 * (length + breadth);
-    }
-};
-
-int main() {
-  Rectangle r1;
-  r1.length = 3;
-  r1.breadth = 5;
-  cout << "Area of rectangle is: " << r1.area() << endl;
-  cout << "Perimeter of rectangle is: " << r1.perimeter()<<endl;
 }

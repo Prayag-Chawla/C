@@ -1,24 +1,30 @@
-#include <iostream>
+#include<iostream>
+#include<string.h>
 using namespace std;
-int main(){
-int n = 5;
-    int arr[n] = {1,5,6,4,7};
-    int temp;
-    for(int i = 0; i<n/2; i++){
-        temp = arr[i];
-        arr[i] = arr[n-i-1];
-        arr[n-i-1] = temp;
+int main()
+{
+    string str;
+    cout<<"Enter the string : "<<endl;
+    cin>>str;
+    int n = 0, count = 0;
+    for(int i=0;i<=str[i]; i++)
+    {
+        n=n+1;
     }
-    for(int i = 0; i
- < n; i++){
-        cout << arr[i] << " ";
+    for(int i=0;i<n/2; i++)
+    {
+        if(str[i]!=str[n-i-1])
+        {
+            count=count + 1;
+        }
     }
-}
-
-
-
-
-
-
-
-
+    if(count ==0)
+    {
+        cout<<"The string is a palindrome"<<endl; 
+    }
+    else
+    {
+        cout<<"The string is not a palindrome"<<endl;
+    }
+    return 0;
+    }

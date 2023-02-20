@@ -1,18 +1,22 @@
 #include<iostream>
+#include<string.h>
 using namespace std;
-int main() 
+int main()
 {
-     cout<<"Enter the value of goal : "<<endl;
-    int goal;
-    cin>>goal;
-   
-    int sum = 0;
-    for(int n = 1; n < goal; n++){
-        sum += n;
-        if(sum >= goal){
-            cout<< n;
-            return 0;
-        }
+   string text;
+   cout<<"Enter the string : "<<endl;
+   getline(cin, text);
+   for(int i =0;i<=text[i]; i++)
+   {
+    if(text[i] >= 65 && text[i] <= 90)
+    {
+        text[i] = text[i] + 32;
+
     }
-    return 0;
+   
 }
+cout<<"The converted string to lowercase is : "<<endl;
+cout<<text;
+return 0;
+}
+

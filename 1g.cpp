@@ -1,16 +1,32 @@
-#include <iostream>
+#include<iostream>
+#include<string.h>
 using namespace std;
-
-int main() {
-    int arr[] = {1, 3, 2, 7, 5, 4};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int max = arr[0], maxIndex = 0;
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-            maxIndex = i;
-        }
+int main()
+{
+    string str;
+    cout<<"Enter the string : "<<endl;
+    cin>>str;
+    int n = 0, count = 0;
+    for(int i=0;i<=str[i]; i++)
+    {
+        n=n+1;
     }
-    cout << "Index of largest number: " << maxIndex << endl;
+    cout<<"the duplicate characters are : "<<endl;
+
+    for(int i=0;i<n; i++)
+    {
+        count = 1;
+        for(int j = i+1; j<n; j++)
+        {
+            if(str[i]==str[j])
+            {
+                count++;
+            }
+        }
+        if(count>1)
+        cout<<str[i]<<" ";
+        
+    }
+    
     return 0;
-}
+    }

@@ -1,48 +1,21 @@
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-int a[10][10],b[10][10],mul[10][10],r,c,i,j,k;    
-cout<<"enter the number of row=";    
-cin>>r;    
-cout<<"enter the number of column=";    
-cin>>c;    
-cout<<"enter the first matrix element=\n";    
-for(i=0;i<r;i++)    
-{    
-for(j=0;j<c;j++)    
-{    
-cin>>a[i][j];  
-}    
-}    
-cout<<"enter the second matrix element=\n";    
-for(i=0;i<r;i++)    
-{    
-for(j=0;j<c;j++)    
-{    
-cin>>b[i][j];    
-}    
-}    
-cout<<"multiply of the matrix=\n";    
-for(i=0;i<r;i++)    
-{    
-for(j=0;j<c;j++)    
-{    
-mul[i][j]=0;    
-for(k=0;k<c;k++)    
-{    
-mul[i][j]+=a[i][k]*b[k][j];    
-}    
-}    
-}    
-   
-for(i=0;i<r;i++)    
-{    
-for(j=0;j<c;j++)    
-{    
-cout<<mul[i][j]<<" ";    
-}    
-cout<<"\n";    
-}    
-return 0;  
-}    
+#include<iostream>
+using namespace std;
+int factorial(int n)
+{
+    if(n==1||n==0)
+    {
+        return 1;
+    }
+    return n*factorial(n-1);
+}
+int main(){
+    int n,r,ans;
+    cout<<"Enter the value of n"<<endl;
+    cin>>n;
+    cout<<"Enter the value of r: "<<endl;
+    cin>>r;
+    ans=factorial(n)/(factorial(r)*factorial(n-r));
+    cout<<"The required answer of nCr is : "<<ans;
+    return 0;
+
+}
